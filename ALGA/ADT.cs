@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace OE.ALGA.Adatszerkezetek
 {
     public interface Lista<T>
@@ -83,6 +85,8 @@ namespace OE.ALGA.Adatszerkezetek
         public T Kiolvas(K kulcs);
         public void Torol(K kulcs);
     }
+
+
 
     public class HibasKulcsKivetel : Exception
     {

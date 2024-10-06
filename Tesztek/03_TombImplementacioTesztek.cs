@@ -151,113 +151,113 @@ namespace OE.ALGA.Tesztek
         }
     }
 
-    //     [TestClass]
-    //     public class TombListaTesztek
-    //     {
-    //         [TestMethod]
-    //         public void Bejaras() //F3.
-    //         {
-    //             Lista<int> l = new TombLista<int>();
-    //             l.Hozzafuz(1);
-    //             l.Hozzafuz(3);
-    //             l.Hozzafuz(2);
-    //             string s = "";
-    //             l.Bejar(x => s += x.ToString());
-    //             Assert.AreEqual("132", s);
-    //         }
-    // 
-    //         [TestMethod]
-    //         public void HozzaFuzes() //F3.
-    //         {
-    //             Lista<int> l = new TombLista<int>();
-    //             l.Hozzafuz(1);
-    //             l.Hozzafuz(3);
-    //             l.Hozzafuz(2);
-    //             Assert.AreEqual(1, l.Kiolvas(0));
-    //             Assert.AreEqual(3, l.Kiolvas(1));
-    //             Assert.AreEqual(2, l.Kiolvas(2));
-    //         }
-    // 
-    //         [TestMethod]
-    //         public void Meret() //F3.
-    //         {
-    //             Lista<string> l = new TombLista<string>();
-    //             Assert.AreEqual(0, l.Elemszam);
-    //             l.Hozzafuz("A");
-    //             Assert.AreEqual(1, l.Elemszam);
-    //             l.Hozzafuz("B");
-    //             Assert.AreEqual(2, l.Elemszam);
-    //         }
-    // 
-    //         [TestMethod]
-    //         public void Novekedes() //F3.
-    //         {
-    //             Lista<int> l = new TombLista<int>();
-    //             for (int i = 0; i < 1000; i++)
-    //                 l.Hozzafuz(i * i);
-    //             for (int i = 0; i < 1000; i++)
-    //                 Assert.AreEqual(i * i, l.Kiolvas(i));
-    //         }
-    // 
-    //         [TestMethod]
-    //         public void Beszuras() //F3.
-    //         {
-    //             Lista<int> l = new TombLista<int>();
-    //             l.Beszur(0, 1);
-    //             l.Beszur(0, 2);
-    //             l.Beszur(1, 3);
-    //             l.Beszur(3, 4);
-    //             l.Beszur(2, 5);
-    //             Assert.AreEqual(2, l.Kiolvas(0));
-    //             Assert.AreEqual(3, l.Kiolvas(1));
-    //             Assert.AreEqual(5, l.Kiolvas(2));
-    //             Assert.AreEqual(1, l.Kiolvas(3));
-    //             Assert.AreEqual(4, l.Kiolvas(4));
-    //         }
-    // 
-    //         [TestMethod]
-    //         public void Torles() //F3.
-    //         {
-    //             Lista<int> l = new TombLista<int>();
-    //             l.Hozzafuz(1);
-    //             l.Hozzafuz(3);
-    //             l.Hozzafuz(2);
-    //             l.Hozzafuz(3);
-    //             l.Hozzafuz(4);
-    //             l.Torol(3);
-    //             Assert.AreEqual(1, l.Kiolvas(0));
-    //             Assert.AreEqual(2, l.Kiolvas(1));
-    //             Assert.AreEqual(4, l.Kiolvas(2));
-    //         }
-    // 
-    //         [TestMethod]
-    //         public void Modositas() //F3.
-    //         {
-    //             Lista<int> l = new TombLista<int>();
-    //             l.Hozzafuz(1);
-    //             l.Hozzafuz(3);
-    //             l.Hozzafuz(2);
-    //             l.Modosit(1, 5);
-    //             l.Modosit(0, 4);
-    //             Assert.AreEqual(4, l.Kiolvas(0));
-    //             Assert.AreEqual(5, l.Kiolvas(1));
-    //             Assert.AreEqual(2, l.Kiolvas(2));
-    //         }
-    // 
-    //         [TestMethod]
-    //         public void ForeachBejaras() //F4.
-    //         {
-    //             TombLista<string> l = new TombLista<string>();
-    //             l.Hozzafuz("a");
-    //             l.Hozzafuz("c");
-    //             l.Hozzafuz("d");
-    //             l.Hozzafuz("b");
-    //             string osszefuzo = "";
-    //             foreach(string x in l)
-    //             {
-    //                 osszefuzo += x;
-    //             }
-    //             Assert.AreEqual("acdb", osszefuzo);
-    //         }
-    //     }
+    [TestClass]
+    public class TombListaTesztek
+    {
+        [TestMethod]
+        public void Bejaras() //F3.
+        {
+            Lista<int> l = new TombLista<int>();
+            l.Hozzafuz(1);
+            l.Hozzafuz(3);
+            l.Hozzafuz(2);
+            string s = "";
+            l.Bejar(x => s += x.ToString());
+            Assert.AreEqual("132", s);
+        }
+
+        [TestMethod]
+        public void HozzaFuzes() //F3.
+        {
+            Lista<int> l = new TombLista<int>();
+            l.Hozzafuz(1);
+            l.Hozzafuz(3);
+            l.Hozzafuz(2);
+            Assert.AreEqual(1, l.Kiolvas(0));
+            Assert.AreEqual(3, l.Kiolvas(1));
+            Assert.AreEqual(2, l.Kiolvas(2));
+        }
+
+        [TestMethod]
+        public void Meret() //F3.
+        {
+            Lista<string> l = new TombLista<string>();
+            Assert.AreEqual(0, l.Elemszam);
+            l.Hozzafuz("A");
+            Assert.AreEqual(1, l.Elemszam);
+            l.Hozzafuz("B");
+            Assert.AreEqual(2, l.Elemszam);
+        }
+
+        [TestMethod]
+        public void Novekedes() //F3.
+        {
+            Lista<int> l = new TombLista<int>();
+            for (int i = 0; i < 1000; i++)
+                l.Hozzafuz(i * i);
+            for (int i = 0; i < 1000; i++)
+                Assert.AreEqual(i * i, l.Kiolvas(i));
+        }
+
+        [TestMethod]
+        public void Beszuras() //F3.
+        {
+            Lista<int> l = new TombLista<int>();
+            l.Beszur(0, 1);
+            l.Beszur(0, 2);
+            l.Beszur(1, 3);
+            l.Beszur(3, 4);
+            l.Beszur(2, 5);
+            Assert.AreEqual(2, l.Kiolvas(0));
+            Assert.AreEqual(3, l.Kiolvas(1));
+            Assert.AreEqual(5, l.Kiolvas(2));
+            Assert.AreEqual(1, l.Kiolvas(3));
+            Assert.AreEqual(4, l.Kiolvas(4));
+        }
+
+        [TestMethod]
+        public void Torles() //F3.
+        {
+            Lista<int> l = new TombLista<int>();
+            l.Hozzafuz(1);
+            l.Hozzafuz(3);
+            l.Hozzafuz(2);
+            l.Hozzafuz(3);
+            l.Hozzafuz(4);
+            l.Torol(3);
+            Assert.AreEqual(1, l.Kiolvas(0));
+            Assert.AreEqual(2, l.Kiolvas(1));
+            Assert.AreEqual(4, l.Kiolvas(2));
+        }
+
+        [TestMethod]
+        public void Modositas() //F3.
+        {
+            Lista<int> l = new TombLista<int>();
+            l.Hozzafuz(1);
+            l.Hozzafuz(3);
+            l.Hozzafuz(2);
+            l.Modosit(1, 5);
+            l.Modosit(0, 4);
+            Assert.AreEqual(4, l.Kiolvas(0));
+            Assert.AreEqual(5, l.Kiolvas(1));
+            Assert.AreEqual(2, l.Kiolvas(2));
+        }
+
+        [TestMethod]
+        public void ForeachBejaras() //F4.
+        {
+            TombLista<string> l = new TombLista<string>();
+            l.Hozzafuz("a");
+            l.Hozzafuz("c");
+            l.Hozzafuz("d");
+            l.Hozzafuz("b");
+            string osszefuzo = "";
+            foreach (string x in l)
+            {
+                osszefuzo += x;
+            }
+            Assert.AreEqual("acdb", osszefuzo);
+        }
+    }
 }
