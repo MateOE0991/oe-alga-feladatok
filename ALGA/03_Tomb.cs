@@ -96,6 +96,7 @@ namespace OE.ALGA.Adatszerkezetek
 
 
 
+
     public class TombLista<T> : Lista<T>, IEnumerable<T>
     {
         T[] E;
@@ -212,7 +213,7 @@ namespace OE.ALGA.Adatszerkezetek
             public void Dispose()
             {
                 
-    }
+            }
 
             public T Current
             {
@@ -233,5 +234,6 @@ namespace OE.ALGA.Adatszerkezetek
 
    
 
+   
 
 }
