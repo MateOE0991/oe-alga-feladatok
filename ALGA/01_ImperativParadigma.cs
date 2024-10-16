@@ -65,7 +65,7 @@ namespace OE.ALGA.Paradigmak
         }
     }
 
-    class FeladatTaroloBejaro<T> : IEnumerator<T>
+    public class FeladatTaroloBejaro<T> : IEnumerator<T>
     {
         readonly T[] tarolo;
         readonly int n;
