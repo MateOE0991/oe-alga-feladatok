@@ -33,7 +33,7 @@ namespace OE.ALGA.Adatszerkezetek
             U = new LancoltLista<SzotarElem<K, T>>();
         }
 
-        public HasitoSzotarTulcsordulasiTerulettel(int meret) : this(meret, kulcs => kulcs.GetHashCode())
+        public HasitoSzotarTulcsordulasiTerulettel(int meret) : this(meret, static kulcs => kulcs.GetHashCode())
         {
         }
 
