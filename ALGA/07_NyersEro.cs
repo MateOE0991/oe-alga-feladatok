@@ -48,7 +48,7 @@ namespace OE.ALGA.Optimalizalas
         }
         public bool Ervenyes(bool[] pakolas)
         {
-            if (OsszSuly(pakolas) <= Wmax) return true;
+            if (OsszSuly(pakolas) <= Wmax) return true; // <= fontos
             else return false;
         }
     }
@@ -98,7 +98,7 @@ namespace OE.ALGA.Optimalizalas
 
             for (int j = 0; j <= problema.n - 1; j++)
             {
-                K[j] = Math.Floor(szam / Math.Pow(2, j)) % 2 == 1;
+                K[j] = Math.Floor(szam / Math.Pow(2, j)) % 2 == 1; // Math.Floor lefele kerekites fontos
             }
 
             return K;
