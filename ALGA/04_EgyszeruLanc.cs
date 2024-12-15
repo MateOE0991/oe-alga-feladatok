@@ -111,7 +111,7 @@ namespace OE.ALGA.Adatszerkezetek
         }
     }
 
-    public class LancoltLista<T> : Lista<T>
+    public class LancoltLista<T> : Lista<T>, IEnumerable<T>
     {
         LancElem<T>? fej;
 
@@ -246,8 +246,67 @@ namespace OE.ALGA.Adatszerkezetek
             }
             while (p != null);
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new LancoltListaBejaro<T>(fej);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
     }
 
+    public class LancoltListaBejaro<T> : IEnumerator<T>
+    {
+        private LancElem<T>? fej;
+        private LancElem<T>? aktualisElem;
 
+        public LancoltListaBejaro(LancElem<T>? fej)
+        {
+            this.fej = fej;
+            this.aktualisElem = null;
+        }
+
+        public T Current
+        {
+            get
+            {
+                if (aktualisElem == null)
+                {
+                    throw new InvalidOperationException("Nincs aktuális elem!");
+                }
+                return aktualisElem.tart;
+            }
+        }
+
+        object IEnumerator.Current => Current;
+
+        public bool MoveNext()
+        {
+            if (aktualisElem == null)
+            {
+                aktualisElem = fej;
+            }
+            else
+            {
+                aktualisElem = aktualisElem.kov;
+            }
+            return aktualisElem != null;
+        }
+
+        public void Reset()
+        {
+            aktualisElem = null;
+        }
+
+        public void Dispose()
+        {
+            // Nincs erőforrás-felszabadítás
+        }
+
+    }
 }
 

@@ -6,6 +6,7 @@ namespace OE.ALGA.Tesztek
     [TestClass()]
     public class SzotarTesztek
     {
+        [TestMethod()]
         public static int TesztHasitoFuggveny(string kulcs) //F2.(f)
         {
             if (string.IsNullOrEmpty(kulcs))

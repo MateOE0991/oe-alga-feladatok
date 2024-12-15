@@ -23,7 +23,7 @@ namespace OE.ALGA.Adatszerkezetek
     }
 
 
-    public class FaHalmaz<T> :Halmaz<T> where T : IComparable 
+    public class FaHalmaz<T> :Halmaz<T> where T : IComparable
     {
 
         FaElem<T>? gyoker = null;
@@ -83,6 +83,7 @@ namespace OE.ALGA.Adatszerkezetek
             if (p != null)
             {
                 int comp = p.tart.CompareTo(ertek); // ertek.CompareTo(p.tart) lenne az alapjarat és akkor kisebb => balra / nagyobb => jobbra lenne
+
                 if (comp == 1) // ertek nagyobb mint a tartalom, ergo balra kell keresni
                 {
                     return ReszfaEleme(p.bal, ertek);

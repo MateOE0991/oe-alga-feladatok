@@ -18,7 +18,6 @@ namespace OE.ALGA.Adatszerkezetek
         {
             E = new T[meret];
 
-
         }
 
         public bool Ures { get{ return n == 0; }  }
@@ -58,43 +57,49 @@ namespace OE.ALGA.Adatszerkezetek
         int u = 0; // utolso elem
         int n = 0; // sorban levo elemek szama
 
-        public TombSor(int meret)
+
+        public TombSor(int méret)
         {
-            E = new T[meret]; 
+            if (méret <= 0) throw new ArgumentException("A méretnek pozitívnak kell lennie.", nameof(méret));
+            E = new T[méret];
+            e = 0;
+            u = 0;
+            n = 0;
         }
 
-        public bool Ures => n == 0;
+        public bool Üres => n == 0;
 
-        public T Elso()
-        {
-            if (!Ures) return E[(e + 1) % E.Length];
-            else throw new NincsElemKivetel();
-        }
+        public bool Ures { get { return n == 0; } }
 
-        public void Sorba(T ertek)
+        public void Sorba(T érték)
         {
-            if (n < E.Length)
-            {
-                E[u] = ertek;
-                u = ((u + 1) % E.Length);
-                n++;
-            }
-            else throw new NincsHelyKivetel();
+            if (n >= E.Length)
+                throw new NincsHelyKivetel();
+
+            E[u] = érték;
+            u = (u + 1) % E.Length;
+            n++;
         }
 
         public T Sorbol()
         {
-            if (n > 0)
-            {
-                n--;
-                e = ((e + 1) % E.Length);
-                return E[e];
-            }
-            else throw new NincsElemKivetel();
+            if (Üres)
+                throw new NincsElemKivetel();
+
+            T érték = E[e];
+            e = (e + 1) % E.Length;
+            n--;
+            return érték;
+        }
+
+        public T Elso()
+        {
+            if (Ures)
+                throw new NincsElemKivetel();
+
+            return E[e];
         }
     }
-
-
 
 
     public class TombLista<T> : Lista<T>, IEnumerable<T>

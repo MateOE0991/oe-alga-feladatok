@@ -206,20 +206,20 @@ namespace OE.ALGA.Tesztek
             Assert.AreEqual(2, l.Kiolvas(2));
         }
 
-        //[TestMethod]
-        //public void ForeachBejaras() //F5.
-        //{
-        //    LancoltLista<string> l = new LancoltLista<string>();
-        //    l.Hozzafuz("a");
-        //    l.Hozzafuz("c");
-        //    l.Hozzafuz("d");
-        //    l.Hozzafuz("b");
-        //    string osszefuzo = "";
-        //    foreach (string x in l)
-        //    {
-        //        osszefuzo += x;
-        //    }
-        //    Assert.AreEqual("acdb", osszefuzo);
-        //}
+        [TestMethod]
+        public void ForeachBejaras() //F5.
+        {
+            LancoltLista<string> l = new LancoltLista<string>();
+            l.Hozzafuz("a");
+            l.Hozzafuz("c");
+            l.Hozzafuz("d");
+            l.Hozzafuz("b");
+            string osszefuzo = "";
+            foreach (string x in l)
+            {
+                osszefuzo += x;
+            }
+            Assert.AreEqual("acdb", osszefuzo);
+        }
     }
 }
